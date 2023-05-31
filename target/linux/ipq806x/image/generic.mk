@@ -141,8 +141,7 @@ define Device/edgecore_ecw5410
 	BLOCKSIZE := 128k
 	PAGESIZE := 2048
 	DEVICE_DTS_CONFIG := config@v2.0-ap160
-	DEVICE_PACKAGES := ath10k-firmware-qca9984-ct \
-		ipq-wifi-edgecore_ecw5410
+	DEVICE_PACKAGES := ath10k-firmware-qca9984-ct
 endef
 TARGET_DEVICES += edgecore_ecw5410
 
@@ -321,6 +320,20 @@ define Device/netgear_r7800
 endef
 TARGET_DEVICES += netgear_r7800
 
+define Device/netgear_xr450
+	$(call Device/DniImage)
+	DEVICE_VENDOR := NETGEAR
+	DEVICE_MODEL := Nighthawk XR450
+	SOC := qcom-ipq8065
+	KERNEL_SIZE := 4096k
+	NETGEAR_BOARD_ID := XR450
+	NETGEAR_HW_ID := 29764958+0+256+512+4x4+4x4+cascade
+	BLOCKSIZE := 128k
+	PAGESIZE := 2048
+	DEVICE_PACKAGES := ath10k-firmware-qca9984-ct kmod-ramoops
+endef
+TARGET_DEVICES += netgear_xr450
+
 define Device/netgear_xr500
 	$(call Device/DniImage)
 	DEVICE_VENDOR := NETGEAR
@@ -345,7 +358,7 @@ define Device/nokia_ac400i
 	BLOCKSIZE := 128k
 	PAGESIZE := 2048
 	BOARD_NAME := ac400i
-	DEVICE_PACKAGES := ath10k-firmware-qca9984-ct ipq-wifi-nokia-ac400i
+	DEVICE_PACKAGES := ath10k-firmware-qca9984-ct
 endef
 TARGET_DEVICES += nokia_ac400i
 
